@@ -7,7 +7,6 @@ namespace Rate.Lib.Bank
 {
     public static class Taiwan
     {
-        public static DataMeta Table = new DataMeta();
         private readonly static int Expire = 15;
         /// <summary>
         /// XPath的條件
@@ -22,6 +21,7 @@ namespace Rate.Lib.Bank
 
         public static DataMeta TaiwanBK_GetRate(this HtmlNodeCollection Node, EnumBank EnumBank)
         {
+            DataMeta Table = new DataMeta();
             RateData TempTable = new RateData();
             Table.CreateDate = DateTime.Now;
             Table.Expire = DateTime.Now.AddMinutes(Expire);

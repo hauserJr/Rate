@@ -23,7 +23,7 @@ namespace Rate.Lib.Bank
             DataMeta Table = new DataMeta();
             RateData TempTable = new RateData();
             Table.CreateDate = DateTime.Now;
-            Table.Expire = DateTime.Now.AddSeconds(Expire);
+            Table.Expire = DateTime.Now.AddMinutes(Expire);
             Table.Key = EnumBank;
 
             int LIndex = (int)EnumRate.幣別;
