@@ -6,7 +6,6 @@ using System.Text;
 using Rate.Lib;
 using Rate.Lib.Enum;
 using Rate.Lib.Models;
-
 namespace Rate
 {
     class Program
@@ -35,11 +34,11 @@ namespace Rate
                 switch (Enum.Parse(typeof(EnumBank), BankKey))
                 {
                     case EnumBank.臺灣銀行:
-                        Result = new Url("https://rate.bot.com.tw/xrt/all/day").GetRate(EnumBank.臺灣銀行);
+                        Result = BankRate.GetRate(EnumBank.臺灣銀行);
                         break;
 
                     case EnumBank.台新銀行:
-                        Result = new Url("https://www.taishinbank.com.tw/TS/TS06/TS0605/TS060502/index.htm?urlPath1=TS02&urlPath2=TS0202").GetRate(EnumBank.台新銀行);
+                        Result = BankRate.GetRate(EnumBank.台新銀行);
                         break;
 
                     default:

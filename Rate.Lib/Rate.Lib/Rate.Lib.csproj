@@ -52,7 +52,7 @@
     <Compile Include="Enum\EnumBank.cs" />
     <Compile Include="Enum\EnumRate.cs" />
     <Compile Include="Models\DataMeta.cs" />
-    <Compile Include="Rate.cs" />
+    <Compile Include="BankRate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
