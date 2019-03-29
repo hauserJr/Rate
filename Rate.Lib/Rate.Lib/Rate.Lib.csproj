@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bank\TaiShin.cs" />
+    <Compile Include="Bank\TaiwanBK.cs" />
     <Compile Include="Enum\EnumBank.cs" />
     <Compile Include="Enum\EnumRate.cs" />
     <Compile Include="Models\DataMeta.cs" />

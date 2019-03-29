@@ -8,7 +8,7 @@ namespace Rate.Lib.Enum
 {
     public enum EnumBank : int
     {
-        台新 = 0,
-        TaiShin = 0
+        台灣銀行 = 004,
+        台新銀行 = 812,
     }
 }

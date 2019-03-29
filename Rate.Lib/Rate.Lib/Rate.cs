@@ -71,8 +71,11 @@ namespace Rate.Lib
             var HtmlNode = BankUrl.GetHtmlNode();
 
             var Result = 
-                EnumBank.台新 == EnumBank || EnumBank.TaiShin == EnumBank ?
-                HtmlNode.SelectNodes(TaiShin.XPathExpression).TaiShin_GetRate(EnumBank) : new DataMeta();
+                EnumBank.台新銀行 == EnumBank ?
+                HtmlNode.SelectNodes(TaiShin.XPathExpression).TaiShin_GetRate(EnumBank) :
+                EnumBank.台灣銀行 == EnumBank ?
+                HtmlNode.SelectNodes(TaiwanBK.XPathExpression).TaiwanBK_GetRate(EnumBank) :
+                new DataMeta();
 
             return Result;
         }

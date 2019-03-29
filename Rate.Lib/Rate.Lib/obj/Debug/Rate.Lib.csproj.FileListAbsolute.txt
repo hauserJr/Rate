@@ -8,3 +8,13 @@ D:\.Private\Rate.Lib\Rate.Lib\obj\Debug\Rate.Lib.csproj.CoreCompileInputs.cache
 D:\.Private\Rate.Lib\Rate.Lib\obj\Debug\Rate.Lib.csproj.CopyComplete
 D:\.Private\Rate.Lib\Rate.Lib\obj\Debug\Rate.Lib.dll
 D:\.Private\Rate.Lib\Rate.Lib\obj\Debug\Rate.Lib.pdb
+E:\Project\Private\Rate_Demo\Rate.Lib\Rate.Lib\bin\Debug\Rate.Lib.dll
+E:\Project\Private\Rate_Demo\Rate.Lib\Rate.Lib\bin\Debug\Rate.Lib.pdb
+E:\Project\Private\Rate_Demo\Rate.Lib\Rate.Lib\bin\Debug\HtmlAgilityPack.dll
+E:\Project\Private\Rate_Demo\Rate.Lib\Rate.Lib\bin\Debug\HtmlAgilityPack.pdb
+E:\Project\Private\Rate_Demo\Rate.Lib\Rate.Lib\bin\Debug\HtmlAgilityPack.xml
+E:\Project\Private\Rate_Demo\Rate.Lib\Rate.Lib\obj\Debug\Rate.Lib.csprojAssemblyReference.cache
+E:\Project\Private\Rate_Demo\Rate.Lib\Rate.Lib\obj\Debug\Rate.Lib.csproj.CoreCompileInputs.cache
+E:\Project\Private\Rate_Demo\Rate.Lib\Rate.Lib\obj\Debug\Rate.Lib.csproj.CopyComplete
+E:\Project\Private\Rate_Demo\Rate.Lib\Rate.Lib\obj\Debug\Rate.Lib.dll
+E:\Project\Private\Rate_Demo\Rate.Lib\Rate.Lib\obj\Debug\Rate.Lib.pdb
