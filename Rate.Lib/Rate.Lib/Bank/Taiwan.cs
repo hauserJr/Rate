@@ -5,7 +5,7 @@ using HtmlAgilityPack;
 using System.Linq;
 namespace Rate.Lib.Bank
 {
-    public static class TaiwanBK
+    public static class Taiwan
     {
         public static DataMeta Table = new DataMeta();
         private readonly static int Expire = 15;

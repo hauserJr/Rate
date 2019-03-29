@@ -4,7 +4,7 @@ using System;
 using HtmlAgilityPack;
 namespace Rate.Lib.Bank
 {
-    public static class TaiShin
+    public static class Taishin
     {
         public static DataMeta Table = new DataMeta();
         private readonly static int Expire = 15;

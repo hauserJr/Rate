@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using Rate.Lib;
@@ -12,24 +14,22 @@ namespace Rate
         static void Main(string[] args)
         {
             bool Exit = false;
-            Url BankUrl = new Url("-");
             DataMeta Result = new DataMeta();
             while (!Exit)
             {
-                Console.WriteLine("請輸入銀行代碼，\r\n台灣銀行(004)  台新銀行(812)\r\n");
+                ShowEnumList();
                 var BankKey = Console.ReadLine();
+
                 switch (Enum.Parse(typeof(EnumBank), BankKey))
                 {
-                    case EnumBank.台灣銀行:
-                        BankUrl = new Url("https://rate.bot.com.tw/xrt/all/day");
-                        Result = BankUrl.GetRate(EnumBank.台灣銀行);
-                        
+                    case EnumBank.臺灣銀行:
+                        Result = new Url("https://rate.bot.com.tw/xrt/all/day").GetRate(EnumBank.臺灣銀行);
                         break;
+
                     case EnumBank.台新銀行:
-                        BankUrl = new Url("https://www.taishinbank.com.tw/TS/TS06/TS0605/TS060502/index.htm?urlPath1=TS02&urlPath2=TS0202");
-                        Result = BankUrl.GetRate(EnumBank.台新銀行);
-                        
+                        Result = new Url("https://www.taishinbank.com.tw/TS/TS06/TS0605/TS060502/index.htm?urlPath1=TS02&urlPath2=TS0202").GetRate(EnumBank.台新銀行);
                         break;
+
                     default:
                         Exit = true;
                         break;
@@ -45,7 +45,7 @@ namespace Rate
                            + " 資料更新時間為：" + Result.CreateDate.Value.ToString("yyyy/MM/dd HH:mm:ss.fff")
                            + " 下次更新時間為：" + Result.Expire.Value.ToString("yyyy/MM/dd HH:mm:ss.fff")
                            + "\r\n--------------------------------------------------------------------------------------------");
-            Console.WriteLine("幣別                即期買入            即期賣出            現鈔買入            現鈔賣出");
+            Console.WriteLine("幣別                即期買入            即期賣出            現鈔買入            現鈔賣出\r\n");
             foreach (var item in Result.Data)
             {
                 byte[] byteStr = Encoding.GetEncoding("big5").GetBytes(item.Currencty);
@@ -64,6 +64,36 @@ namespace Rate
                     ));
             }
             Console.WriteLine("--------------------------------------------------------------------------------------------\r\n");
+        }
+
+        public static void ShowEnumList()
+        {
+            List<EnumBank> EnumList = Program.EnumToList<EnumBank>();
+            string BankList = "請輸入要查詢的銀行代號\r\n";
+            foreach (var item in EnumList.Select((value, index) => new { value, index }))
+            {
+                if (item.index % 2 != 0)
+                {
+                    BankList += item.value + "(" + string.Format("{0:000}", (int)item.value) + ")\r\n";
+                }
+                else
+                {
+                    BankList += item.value + "(" + string.Format("{0:000}", (int)item.value) + ")   ";
+                }
+            }
+
+            Console.WriteLine(BankList);
+            Console.Write("請輸入代號：");
+        }
+
+        public static List<T> EnumToList<T>()
+        {
+            return Enum.GetValues(typeof(T)).Cast<T>().ToList<T>();
+        }
+
+        public static IEnumerable<T> EnumToEnumerable<T>()
+        {
+            return Enum.GetValues(typeof(T)).Cast<T>();
         }
     }
 }
