@@ -12,7 +12,7 @@ namespace Rate.Lib.Bank
     public static class TaiShin
     {
         public static DataMeta Table = new DataMeta();
-
+        private readonly static int Expire = 15;
         /// <summary>
         /// XPath的條件
         /// </summary>
@@ -28,7 +28,7 @@ namespace Rate.Lib.Bank
         {
             RateData TempTable = new RateData();
             Table.CreateDate = DateTime.Now;
-            Table.Expire = DateTime.Now.AddMinutes(15);
+            Table.Expire = DateTime.Now.AddMinutes(Expire);
             Table.Key = EnumBank;
 
             int LIndex = (int)EnumRate.幣別;
