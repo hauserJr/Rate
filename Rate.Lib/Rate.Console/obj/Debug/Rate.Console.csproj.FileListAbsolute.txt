@@ -1,0 +1,13 @@
+D:\.Private\Rate.Lib\Rate.Console\bin\Debug\Rate.Console.exe.config
+D:\.Private\Rate.Lib\Rate.Console\bin\Debug\Rate.Console.exe
+D:\.Private\Rate.Lib\Rate.Console\bin\Debug\Rate.Console.pdb
+D:\.Private\Rate.Lib\Rate.Console\bin\Debug\Rate.Lib.dll
+D:\.Private\Rate.Lib\Rate.Console\bin\Debug\HtmlAgilityPack.dll
+D:\.Private\Rate.Lib\Rate.Console\bin\Debug\Rate.Lib.pdb
+D:\.Private\Rate.Lib\Rate.Console\bin\Debug\HtmlAgilityPack.pdb
+D:\.Private\Rate.Lib\Rate.Console\bin\Debug\HtmlAgilityPack.xml
+D:\.Private\Rate.Lib\Rate.Console\obj\Debug\Rate.Console.csprojAssemblyReference.cache
+D:\.Private\Rate.Lib\Rate.Console\obj\Debug\Rate.Console.csproj.CoreCompileInputs.cache
+D:\.Private\Rate.Lib\Rate.Console\obj\Debug\Rate.Console.csproj.CopyComplete
+D:\.Private\Rate.Lib\Rate.Console\obj\Debug\Rate.Console.exe
+D:\.Private\Rate.Lib\Rate.Console\obj\Debug\Rate.Console.pdb

@@ -1,0 +1,68 @@
+﻿using Rate.Lib.Enum;
+using Rate.Lib.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Linq;
+using HtmlAgilityPack;
+namespace Rate.Lib.Bank
+{
+    public static class TaiShin
+    {
+        public static DataMeta Table = new DataMeta();
+
+        /// <summary>
+        /// XPath的條件
+        /// </summary>
+        public static string XPathExpression
+        {
+            get
+            {
+                return @"//tbody/tr[@bgcolor=""#FFFFFF""]/td[@class=""size13nocolor""]";
+            }
+        }
+
+        public static DataMeta TaiShin_GetRate(this HtmlNodeCollection Node, EnumBank EnumBank)
+        {
+            RateData TempTable = new RateData();
+            Table.CreateDate = DateTime.Now;
+            Table.Expire = DateTime.Now.AddMinutes(15);
+            Table.Key = EnumBank;
+
+            int LIndex = (int)EnumRate.幣別;
+            foreach (var item in Node)
+            {
+                if (LIndex == (int)EnumRate.幣別)
+                {
+                    TempTable = new RateData();
+                }
+                switch (LIndex)
+                {
+                    case (int)EnumRate.幣別:
+                        TempTable.Currencty = item.InnerText;
+                        break;
+                    case (int)EnumRate.即期買入:
+                        TempTable.SpotBuying = item.InnerText;
+                        break;
+                    case (int)EnumRate.即期賣出:
+                        TempTable.SpotSelling = item.InnerText;
+                        break;
+                    case (int)EnumRate.現鈔買入:
+                        TempTable.CashBuying = item.InnerText;
+                        break;
+                    case (int)EnumRate.現鈔賣出:
+                        TempTable.CashSelling = item.InnerText;
+                        break;
+                }
+                if (LIndex == (int)EnumRate.現鈔賣出)
+                {
+                    Table.Data.Add(TempTable);
+                }
+                LIndex = LIndex == (int)EnumRate.現鈔賣出 ? (int)EnumRate.幣別 : LIndex + 1;
+            }
+            return Table;
+        }
+    }
+}
