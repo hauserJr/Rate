@@ -25,7 +25,7 @@ namespace Rate.Lib
             }
             catch
             {
-
+                return null;
             }
             return Table.Where(o => o.Key == EnumBank).FirstOrDefault();
         }
@@ -72,7 +72,7 @@ namespace Rate.Lib
 
             var Result = 
                 EnumBank.台新銀行 == EnumBank ?
-                HtmlNode.SelectNodes(Taishin.XPathExpression).TaiShin_GetRate(EnumBank) :
+                HtmlNode.SelectNodes(Taishin.XPathExpression).Taishin_GetRate(EnumBank) :
                 EnumBank.臺灣銀行 == EnumBank ?
                 HtmlNode.SelectNodes(Taiwan.XPathExpression).TaiwanBK_GetRate(EnumBank) :
                 new DataMeta();

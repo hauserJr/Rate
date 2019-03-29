@@ -6,7 +6,6 @@ namespace Rate.Lib.Bank
 {
     public static class Taishin
     {
-        public static DataMeta Table = new DataMeta();
         private readonly static int Expire = 15;
         /// <summary>
         /// XPath的條件
@@ -19,11 +18,12 @@ namespace Rate.Lib.Bank
             }
         }
 
-        public static DataMeta TaiShin_GetRate(this HtmlNodeCollection Node, EnumBank EnumBank)
+        public static DataMeta Taishin_GetRate(this HtmlNodeCollection Node, EnumBank EnumBank)
         {
+            DataMeta Table = new DataMeta();
             RateData TempTable = new RateData();
             Table.CreateDate = DateTime.Now;
-            Table.Expire = DateTime.Now.AddMinutes(Expire);
+            Table.Expire = DateTime.Now.AddSeconds(Expire);
             Table.Key = EnumBank;
 
             int LIndex = (int)EnumRate.幣別;
